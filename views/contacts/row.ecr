@@ -1,0 +1,21 @@
+<tr>
+  <td><%= contact.name %></td>
+  <td><%= Time.utc %></td>
+  <td hx-target="this">
+    <% fragment "button" do %>
+      <% if contact.archived? %>
+        <button
+          hx-put="/contacts/<%= contact.id %>"
+        >
+          Unarchive
+        </button>
+      <% else %>
+        <button
+          hx-delete="/contacts/<%= contact.id %>"
+        >
+          Archive
+        </button>
+      <% end %>
+    <% end %>
+  </td>
+</tr>

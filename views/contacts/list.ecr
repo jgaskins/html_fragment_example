@@ -1,0 +1,14 @@
+<table>
+  <thead>
+    <tr>
+      <th>Contact</th>
+      <th>Last rendered</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% contacts.each do |contact| %>
+      <%== ContactRow.new contact %>
+    <% end %>
+  </tbody>
+</table>

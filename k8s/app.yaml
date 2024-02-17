@@ -1,0 +1,27 @@
+apiVersion: jgaskins.dev/v1beta1
+kind: RailsApp
+metadata:
+  name: armature-template-fragments
+  namespace: default
+spec:
+  before_create:
+    command: ["true"]
+  before_update:
+    command: ["true"]
+  entrypoints:
+  - command: [/app/html_fragment_example]
+    domain: armature-template-fragments.jgaskins.lol
+    health_check:
+      failure_threshold: 36
+      path: /contacts
+      run_every: 5
+      start_after: 1
+    name: web
+    port: 3600
+  env:
+  - name: HOST
+    value: 0.0.0.0
+  - name: PORT
+    value: "3600"
+  image: jgaskins/html-fragment-example
+  image_pull_policy: Always

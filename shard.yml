@@ -1,0 +1,19 @@
+name: html_fragment_example
+version: 0.1.0
+
+authors:
+  - Jamie Gaskins <jgaskins@hey.com>
+
+targets:
+  html_fragment_example:
+    main: src/html_fragment_example.cr
+
+dependencies:
+  armature:
+    github: jgaskins/armature
+  faker:
+    github: askn/faker
+
+crystal: '>= 1.11.2'
+
+license: MIT
